@@ -12,6 +12,7 @@ export default async (object, codDepartamento, codLocalidad, codCircuito, codEsc
   // const html = htmlBuffer;
 
   const $ = load(html, { decodeEntities: false });
+  $('head meta[charset]').attr('content', 'text/html; charset=UTF-8');
   const result = $('table#table-avance-departamentos tbody tr');
   const filas = Array.isArray(result) ? result.slice(1) : result
   // Iterar sobre cada fila y extraer los datos requeridos

@@ -17,7 +17,7 @@ const departamentos = [
 ]
 
 const getEscuelas = async (object, codCircuito) => {
-  const listEscuelas = await getOptionsList('escuelas', codCircuito, ['cod_escuela', 'escuela'])
+  const listEscuelas = await getOptionsList({ type: 'escuelas', cod: codCircuito, keys: ['cod_escuela', 'escuela'] })
   // listEscuelas.length = 1
   for (const escuela of listEscuelas) {
     const { cod_departamento, cod_localidad, cod_circuito } = object
@@ -33,7 +33,7 @@ const getEscuelas = async (object, codCircuito) => {
 }
 
 const getCircuitos = async (object, codCircuito) => {
-  const listCircuitos = await getOptionsList('circuitos', codCircuito, ['cod_circuito', 'circuito'])
+  const listCircuitos = await getOptionsList({ type: 'circuitos', cod: codCircuito, keys: ['cod_circuito', 'circuito'] })
   // listCircuitos.length = 1
   for (const circuito of listCircuitos) {
     const newObject = { ...object, ...circuito }
@@ -43,7 +43,7 @@ const getCircuitos = async (object, codCircuito) => {
 }
 
 const getLocalidades = async (object, codLocalidad) => {
-  const listLocalidades = await getOptionsList('localidades', codLocalidad, ['cod_localidad', 'localidad'])
+  const listLocalidades = await getOptionsList({ type: 'localidades', cod: codLocalidad, keys: ['cod_localidad', 'localidad'] })
   // listLocalidades.length = 1
   for (const localidad of listLocalidades) {
     const newObject = { ...object, ...localidad }
