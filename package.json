@@ -1,0 +1,21 @@
+{
+  "name": "formosa-votaciones",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "excel": "node toexcel.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "iconv-lite": "^0.6.3",
+    "jschardet": "^3.0.0",
+    "json2xls": "^0.1.2",
+    "node-fetch": "^3.3.1"
+  }
+}
