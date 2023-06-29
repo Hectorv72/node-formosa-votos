@@ -1,8 +1,11 @@
-import { getVotosDiputados, getVotosGobernador } from "./src/utilities/getEleccionesProvinciales.js"
+import { getVotosConcejales, getVotosDiputados, getVotosGobernador, getVotosIntendentes } from "./src/utilities/getEleccionesProvinciales.js"
 import { getMesas, getEscuelas, getCircuitos, getDepartamentos, getLocalidades } from "./src/utilities/getFilters.js"
 import saveIntoJson from "./src/utilities/saveIntoJson.js"
 
-let globalList = []
+let globalGobernador = []
+let globalDiputado = []
+let globalIntendente = []
+let globalConcejal = []
 
 const findVotosGobernador = async (object) => {
   // console.log(object)
@@ -15,7 +18,7 @@ const findVotosGobernador = async (object) => {
     const newObject = { ...object, ...votos }
     listDatos.push(newObject)
   }
-  globalList = [...globalList, ...listDatos]
+  globalGobernador = [...globalGobernador, ...listDatos]
 }
 
 const findVotosDiputados = async (object) => {
@@ -29,7 +32,35 @@ const findVotosDiputados = async (object) => {
     const newObject = { ...object, ...votos }
     listDatos.push(newObject)
   }
-  globalList = [...globalList, ...listDatos]
+  globalDiputado = [...globalDiputado, ...listDatos]
+}
+
+const findVotosIntendentes = async (object) => {
+  // console.log(object)
+  const { cod_departamento, cod_localidad, cod_circuito, cod_escuela, cod_mesa } = object
+  const listVotosIntendentes = await getVotosIntendentes(cod_departamento, cod_localidad, cod_circuito, cod_escuela, cod_mesa)
+
+  const listDatos = []
+
+  for (const votos of listVotosIntendentes) {
+    const newObject = { ...object, ...votos }
+    listDatos.push(newObject)
+  }
+  globalIntendente = [...globalIntendente, ...listDatos]
+}
+
+const findVotosConcejales = async (object) => {
+  // console.log(object)
+  const { cod_departamento, cod_localidad, cod_circuito, cod_escuela, cod_mesa } = object
+  const listVotosConcejales = await getVotosConcejales(cod_departamento, cod_localidad, cod_circuito, cod_escuela, cod_mesa)
+
+  const listDatos = []
+
+  for (const votos of listVotosConcejales) {
+    const newObject = { ...object, ...votos }
+    listDatos.push(newObject)
+  }
+  globalConcejal = [...globalConcejal, ...listDatos]
 }
 
 const findMesas = async (object, codEscuela, codCircuito) => {
@@ -37,8 +68,10 @@ const findMesas = async (object, codEscuela, codCircuito) => {
 
   for (const mesa of listMesas) {
     const newObject = { ...object, ...mesa }
-    // findVotosGobernador(newObject)
-    await findVotosDiputados(newObject)
+    await findVotosGobernador({ ...newObject })
+    await findVotosDiputados({ ...newObject })
+    await findVotosIntendentes({ ...newObject })
+    await findVotosConcejales({ ...newObject })
   }
 }
 
@@ -81,8 +114,10 @@ const findAll = async () => {
     console.log(departamento)
     await findLocalidades(departamento, departamento.cod_departamento)
   }
-  // saveIntoJson('FORMOSA-VOTOS-GOBERNADOR', globalList)
-  saveIntoJson('FORMOSA-VOTOS-DIPUTADOS', globalList)
+  saveIntoJson('FORMOSA-VOTOS-GOBERNADOR', globalGobernador)
+  saveIntoJson('FORMOSA-VOTOS-DIPUTADOS', globalDiputado)
+  saveIntoJson('FORMOSA-VOTOS-INTENDENTES', globalIntendente)
+  saveIntoJson('FORMOSA-VOTOS-CONCEJALES', globalConcejal)
 }
 
 findAll()
