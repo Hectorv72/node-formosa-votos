@@ -1,1 +1,66 @@
-[{"cod_localidad":"3995","localidad":"BAJO HONDO"},{"cod_localidad":"9048","localidad":"EL SIMBOLAR Y OTRAS"},{"cod_localidad":"3962","localidad":"FORT�N PILCOMAYO"},{"cod_localidad":"3964","localidad":"FORT�N SOLEDAD"},{"cod_localidad":"3932","localidad":"GUADALCAZAR"},{"cod_localidad":"3972","localidad":"LA LIBERTAD"},{"cod_localidad":"9047","localidad":"LA RINCONADA Y OTRAS"},{"cod_localidad":"3930","localidad":"LAGUNA YEMA"},{"cod_localidad":"3929","localidad":"LAMADRID"},{"cod_localidad":"3960","localidad":"LOS CHIRIGUANOS"},{"cod_localidad":"3927","localidad":"PESCADO NEGRO"},{"cod_localidad":"3953","localidad":"POZO DE MAZA"},{"cod_localidad":"3992","localidad":"POZO DEL MORTERO"},{"cod_localidad":"3934","localidad":"R�O MUERTO"},{"cod_localidad":"3963","localidad":"SUMAYEN"},{"cod_localidad":"3940","localidad":"TRES YUCHANES (Ex - Sombrero Negro)"}]
+[
+  {
+    "cod_localidad": "3995",
+    "localidad": "BAJO HONDO"
+  },
+  {
+    "cod_localidad": "9048",
+    "localidad": "EL SIMBOLAR Y OTRAS"
+  },
+  {
+    "cod_localidad": "3962",
+    "localidad": "FORT�N PILCOMAYO"
+  },
+  {
+    "cod_localidad": "3964",
+    "localidad": "FORT�N SOLEDAD"
+  },
+  {
+    "cod_localidad": "3932",
+    "localidad": "GUADALCAZAR"
+  },
+  {
+    "cod_localidad": "3972",
+    "localidad": "LA LIBERTAD"
+  },
+  {
+    "cod_localidad": "9047",
+    "localidad": "LA RINCONADA Y OTRAS"
+  },
+  {
+    "cod_localidad": "3930",
+    "localidad": "LAGUNA YEMA"
+  },
+  {
+    "cod_localidad": "3929",
+    "localidad": "LAMADRID"
+  },
+  {
+    "cod_localidad": "3960",
+    "localidad": "LOS CHIRIGUANOS"
+  },
+  {
+    "cod_localidad": "3927",
+    "localidad": "PESCADO NEGRO"
+  },
+  {
+    "cod_localidad": "3953",
+    "localidad": "POZO DE MAZA"
+  },
+  {
+    "cod_localidad": "3992",
+    "localidad": "POZO DEL MORTERO"
+  },
+  {
+    "cod_localidad": "3934",
+    "localidad": "R�O MUERTO"
+  },
+  {
+    "cod_localidad": "3963",
+    "localidad": "SUMAYEN"
+  },
+  {
+    "cod_localidad": "3940",
+    "localidad": "TRES YUCHANES (Ex - Sombrero Negro)"
+  }
+]
